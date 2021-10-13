@@ -6,15 +6,57 @@
 </head>
 <body>
 	<script type="text/javascript">
+	/* 
+	let : 함수 안에서만 사용가능, let kor 재선언 불가.
+	사용시 변수명만 이용
+	var : 전역변수 설정이나 지역변수 설정이 가능. 변수의 재선언이 가능
+	키워드없음 : 함수 안에서 전역변수로 동작 가능
+	const : 변수의 값을 변경할 수 없다.
+	*/
 	function getGrade(){
 		document.write('getGrade함수 실행<br>')
-		var kor = 95
+		//let은 단 한번만 정의할 수 있음, 함수 안에서만 사용가능
+		var kor = 95 //지역변수
+		const k = 100//const는 재정의가 불가능하다
 		document.write('전역변수 kor01 : ' + kor01 + "<br>")
+		document.write(k + "<br>")
 	}
-	var kor01 = 12345;
+	var kor01 = 12345;//전역변수
 	getGrade();
 	document.write('국어점수 : ' + kor);
 	
 	</script>
+	
+	<script type = "text/javascript">
+	function getReturn(){
+		var kor =999;
+		return kor;
+		
+	}
+	reKor = getReturn()
+	document.write("리턴 : " +reKor)
+	
+	function printFC(msg){
+		document.write(msg)
+		
+	}
+	var m = "<hr>안녕하세요<hr>"
+	printFC(m)	
+
+	function printFC02(a,b,c,d){
+		document.write(a)
+		document.write(b == undefined)
+		
+		document.write("aarguments size : " +arguments.length)
+		for(i = 0; i <arguments.length; i++){
+		document.write("<hr>"+arguments[i]+"<hr>")
+		}
+	}
+	var a = "<hr>22안녕하세요22<hr>"
+	printFC02(a,1,2,3,5,5,5,5,5)
+	</script>
+	
 </body>
 </html>
+
+
