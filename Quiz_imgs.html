@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var imgNum = 1
+	function nextImg() {
+		imgNum = ++imgNum
+		console.log("클릭후 " + imgNum)
+
+		if (imgNum === 3) {
+			imgNum = 0
+		}
+		if (imgNum === 0) {
+			document.getElementById('img').src = 'img/havertz.jpg'
+		} else if (imgNum === 1) {
+			document.getElementById('img').src = 'img/azpi.jpg'
+		} else if (imgNum === 2) {
+			document.getElementById('img').src = 'img/kante.jpg'
+		}
+
+	}
+	function prevImg() {
+		imgNum = --imgNum
+		console.log("클릭후 " + imgNum)
+		if (imgNum === -1) {
+			imgNum = 2
+		}
+
+		if (imgNum === 0) {
+			document.getElementById('img').src = 'img/havertz.jpg'
+		} else if (imgNum === 1) {
+			document.getElementById('img').src = 'img/azpi.jpg'
+		} else if (imgNum === 2) {
+			document.getElementById('img').src = 'img/kante.jpg'
+		}
+	}
+</script>
+<style type="text/css">
+div {
+	background-color: blue;
+}
+
+#img {
+	width: 300px;
+	height: 300px;
+}
+</style>
+</head>
+<body>
+	<div align="center">
+		<img id="img" src=img/azpi.jpg> <br>
+		<div>
+			<button type="button" onclick="prevImg()">이전사진</button>
+			<button type="button" onclick="nextImg()">다음사진</button>
+			<br>
+		</div>
+	</div>
+</body>
+</html>
