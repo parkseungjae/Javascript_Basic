@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div id='tab'></div>
+
+	<script type="text/javascript">
+		var city = [ '서울', '부산', '대전' ]
+		var joindata1 = city.join()
+		//각인덱스 사이에 값을 넣어준다
+		var joindata2 = city.join('-그리고')
+		document.write('결과 1 : ' + joindata1 + "<br>")
+		document.write('결과 2 : ' + joindata2 + "<br>")
+
+		//제일 마지막에 값을 넣어준다
+		var p1 = city.push('대구', '강원도')
+		document.write('push : ' + city + "<br>")
+
+		//제일 마지막 값을 빼준다
+		city.pop()
+		document.write('city : ' + city + "<br>")
+
+		//맨앞으로 값을 넣어준다
+		city.unshift('강원도')
+		document.write('city : ' + city + "<br>")
+
+		//맨앞 값을 빼준다
+		city.shift()
+		document.write('city : ' + city + "<br>")
+
+		for (i = 0; i < city.length; i++) {
+			document.write("for : " + city[i] + " <br>")
+		}
+
+		function testArr(item, index) {
+			document.write("실행 : " + item + index + "<br>")
+		}
+		city.forEach(testArr)
+
+		//배열에 1~10까지 저장 후 합을 구해주세요
+		var nums = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
+		var sum = 0
+		function sumNum(item, index) {
+			sum += item
+			document.write((index + 1) + "번째 까지의 합 :" + sum + "<br>")
+
+		}
+		nums.forEach(sumNum)
+
+		var data = {
+			'key1' : 100,
+			'key2' : 200
+		}
+		document.write(data.key1 + "," + data['key2'] + "<br>")
+
+		var data = [ {
+			'id' : 111,
+			'name' : '홍길동1',
+			'addr' : '산골짜기1'
+		}, {
+			'id' : 222,
+			'name' : '홍길동2',
+			'addr' : '산골짜기2'
+		}, {
+			'id' : 333,
+			'name' : '홍길동3',
+			'addr' : '산골짜기3'
+		}, {
+			'id' : 444,
+			'name' : '홍길동4',
+			'addr' : '산골짜기4'
+		} ]
+		html = "<table border ='1'><tr><th>id</th><th>name</th><th>addr</th></tr>"
+		document.write("<table>")
+		function printing(items) {
+			html+="<tr>"
+			html+="<td>"+items.id+"</td>"
+			html+="<td>"+items.name+"</td>"
+			html+="<td>"+items.addr+"</td>"
+			html+="</tr>"
+						console.log(items)
+		}
+		data.forEach(printing)
+		html+="</table>"
+		document.getElementById('tab').innerHTML = html
+	</script>
+</body>
+</html>

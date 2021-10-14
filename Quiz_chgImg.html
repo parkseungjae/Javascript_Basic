@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var myVar;
+	function myStart() {
+		myVar = setInterval(myTimer, 1000)
+	}
+	var cnt = 1
+	function myTimer() {
+		cnt++
+		var d = cnt % 4
+		console.log(d)
+		if (d === 0) {
+			if (bool) {
+				document.getElementById('img01').src = 'img/azpi.jpg';
+
+			} else {
+				bool = !bool
+			}
+		} else if (d === 1) {
+			if (bool) {
+				document.getElementById('img01').src = 'img/kante.jpg';
+			} else {
+				bool = !bool
+			}
+		} else if (d === 2) {
+			if (bool) {
+				document.getElementById('img01').src = 'img/havertz.jpg';
+			} else {
+				bool = !bool
+			}
+
+		} else if (d === 3) {
+			if (bool) {
+				document.getElementById('img01').src = 'img/lukaku.jpg';
+			} else {
+				bool = !bool
+			}
+
+		}
+
+	}
+	var stopVal;
+	var bool = true
+	function stop() {
+		clearTimeout(myVar)
+	}
+</script>
+
+<style type="text/css">
+img {
+	width: 300px;
+	height: 300px;
+}
+</style>
+</head>
+<body onload='myStart()' onmouseover="stop()" onmouseout="myStart()">
+	<img id="img01" src="img/azpi.jpg">
+</body>
+</html>

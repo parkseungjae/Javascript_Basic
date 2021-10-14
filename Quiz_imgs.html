@@ -30,10 +30,15 @@
 
 		if (imgNum === 0) {
 			document.getElementById('img').src = 'img/havertz.jpg'
+			document.getElementById('name').src = '하베르츠(29)'
 		} else if (imgNum === 1) {
 			document.getElementById('img').src = 'img/azpi.jpg'
+			document.getElementById('name').src = '아스필리쿠에타(28)'
+
 		} else if (imgNum === 2) {
 			document.getElementById('img').src = 'img/kante.jpg'
+			document.getElementById('name').src = '캉테(7)'
+
 		}
 	}
 </script>
@@ -50,7 +55,7 @@ div {
 </head>
 <body>
 	<div align="center">
-		<img id="img" src=img/azpi.jpg> <br>
+		<img id="img" src=img/azpi.jpg> <br> <label id="name">아스필리쿠에타(28)</label>
 		<div>
 			<button type="button" onclick="prevImg()">이전사진</button>
 			<button type="button" onclick="nextImg()">다음사진</button>
