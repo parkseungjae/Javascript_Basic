@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+	function myFocus() {
+		document.getElementById('pw').focus()
+	}
+	function pwdchk() {
+		inPut = document.getElementById('inPut').value
+		document.getElementById('outPut').value = inPut
+		document.getElementById('inPut').value = ""
+	}
+	function go() {
+		window.history.forward()
+	}
+	function myClick(){
+		var result = confirm('하지말라..')
+		console.log(result)
+		if(result){
+			alert('탈퇴 성공!!!')
+		}else{
+			alert('하지마이 개새끼야')
+			
+		}
+	}
+</script>
+
+</head>
+<body>
+	<input type="button" value="클릭" onclick="myClick()">
+	<br>
+	<p id="myclick"></p>
+	<hr>
+
+	<a href="ex10-2.html">ex10-2로 이동</a>
+	<button type="button" onclick="history.back()">이전</button>
+	<button type="button" onclick="go()">다음</button>
+	<hr>
+	<input type="text" id="inPut" onchange="pwdchk()">
+	<br>
+	<input type="text" id="outPut">
+	<br>
+	<input type="text">
+
+	<hr>
+
+	<input type="text">
+	<br>
+	<input type="password" id="pw">
+	<br>
+	<input type="button" onclick="myFocus()">
+
+</body>
+</html>
