@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function btnMove() {
+		var txt1 = document.getElementById('txt1')
+		var pwd = document.getElementById('pwd')
+		var pwdchk = document.getElementById('pwdchk')
+		var txt4 = document.getElementById('txt4')
+		
+		
+		if (txt1.value == "") {
+			alert("아이디는 필수 사항입니다.")
+		}else{
+			if (pwd.value == "") {
+				alert("비밀번호는 필수 사항입니다.")
+			}else{
+				if (pwdchk.value== "") {
+					alert("비밀번호 확인은 필수 사항입니다.")
+					
+				}else{
+					if (pwd.value == pwdchk.value) {
+						document.getElementById('chklb').innerText='확인'
+						if(txt4.value != null){
+							window.open("success.html","", "width=500,height=500")
+						}
+					}else{
+						document.getElementById('chklb').innerText='불일치'
+						console.log(pwd.value)
+						console.log(pwdchk.value)
+					}
+				}
+				
+			}
+		}
+
+	}
+</script>
+</head>
+<body>
+	<form>
+		<input type="text" id="txt1"><br>
+		<input type="password" id="pwd"><br>
+		<input type="password" id="pwdchk"> <label id="chklb"></label><br>		
+		<input type="text" id="txt4">
+		<hr>
+		<button type="button" onclick="btnMove()">등록</button>
+
+	</form>
+</body>
+</html>
